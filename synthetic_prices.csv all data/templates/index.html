@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Price Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Upload CSV for Price Prediction</h2>
+    <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input type="file" name="file" class="form-control" accept=".csv" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+    <p class="mt-3 text-muted">CSV should have columns: <strong>price, arrivals, sowing, rainfall, buffer_stock</strong></p>
+</div>
+</body>
+</html>
